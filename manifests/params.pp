@@ -78,10 +78,11 @@ class rsyslog::params {
         $default_config_file                 = 'rsyslog_default'
         $modules                             = [
           '$ModLoad imuxsock # provides support for local system logging',
-          '$ModLoad imklog   # provides kernel logging support (previously done by rklogd)',
+          '$ModLoad imklog # provides a link to journald',
+          '#$ModLoad imklog   # provides kernel logging support (previously done by rklogd)',
           '#$ModLoad immark  # provides --MARK-- message capability',
         ]
-        $omit_local_logging                  = false
+        $omit_local_logging                  = true
         $im_journal_ratelimit_interval       = undef
         $im_journal_ratelimit_burst          = undef
         $im_journal_ignore_previous_messages = undef
