@@ -82,7 +82,7 @@ class rsyslog::params {
           '#$ModLoad imklog   # provides kernel logging support (previously done by rklogd)',
           '#$ModLoad immark  # provides --MARK-- message capability',
         ]
-        $omit_local_logging                  = true
+        $omit_local_logging                  = false
         $im_journal_ratelimit_interval       = undef
         $im_journal_ratelimit_burst          = undef
         $im_journal_ignore_previous_messages = undef
